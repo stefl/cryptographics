@@ -20,8 +20,16 @@ h2 {
   @include adjust-font-size-to($base-font-size * 1.5, $lines: 1);
 }
 
+img.full {
+  width: 100%;
+  @include trailer(2);
+}
+
 #ident {
   @include trailer(0);
+  a {
+    text-decoration: none;
+  }
 }
 
 .guttered {

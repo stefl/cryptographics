@@ -13,6 +13,14 @@ get "/" do
   haml :index
 end
 
+get "/quilt" do
+  haml :quilt
+end
+
+get "/object" do
+  haml :object
+end
+
 post "/download" do
   content_type "image/svg"
   params[:svg]
