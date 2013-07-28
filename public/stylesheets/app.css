@@ -5863,8 +5863,8 @@ h2 {
 }
 
 /* line 23, ../../sass/app.scss */
-.intro {
-  margin-bottom: 3em;
+#ident {
+  margin-bottom: 0em;
 }
 
 /* line 27, ../../sass/app.scss */
@@ -5885,18 +5885,30 @@ h2 {
   }
 }
 
-/* line 34, ../../sass/app.scss */
+/* line 35, ../../sass/app.scss */
+.creation {
+  background-color: #ffd;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+/* line 41, ../../sass/app.scss */
+#cryptographic {
+  margin-bottom: 0em;
+}
+
+/* line 45, ../../sass/app.scss */
 #options {
   margin-top: 1.5em;
   text-align: center;
 }
 
-/* line 39, ../../sass/app.scss */
+/* line 50, ../../sass/app.scss */
 #create, #send {
   margin-bottom: 3em;
 }
 
-/* line 43, ../../sass/app.scss */
+/* line 54, ../../sass/app.scss */
 section {
   width: 100%;
   float: right;
@@ -5906,21 +5918,21 @@ section {
   margin-bottom: 3em;
 }
 
-/* line 48, ../../sass/app.scss */
+/* line 59, ../../sass/app.scss */
 .hero {
   margin-top: 3em;
 }
-/* line 50, ../../sass/app.scss */
+/* line 61, ../../sass/app.scss */
 .hero h1 {
   text-align: center;
 }
-/* line 53, ../../sass/app.scss */
+/* line 64, ../../sass/app.scss */
 .hero h2 {
   text-align: center;
   margin-bottom: 3em;
 }
 
-/* line 59, ../../sass/app.scss */
+/* line 70, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;

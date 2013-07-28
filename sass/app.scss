@@ -20,8 +20,8 @@ h2 {
   @include adjust-font-size-to($base-font-size * 1.5, $lines: 1);
 }
 
-.intro {
-  @include trailer(2);
+#ident {
+  @include trailer(0);
 }
 
 .guttered {
@@ -31,6 +31,17 @@ h2 {
     @include pre(3);
   }
 }
+
+.creation {
+  background-color: #ffd;
+  @include padding-leader(1);
+  @include padding-trailer(1);
+}
+
+#cryptographic {
+  @include trailer(0);
+}
+
 #options {
   @include leader(1);
   text-align: center;

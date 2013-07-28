@@ -1,11 +1,11 @@
 %section#ident
-  .hero.guttered
+  .hero
 
     %h1
       %img{:src=>"/images/cryptographics-logo-512.png", :width=>"64", :height=>"64"}
       Cryptographics
     %h2
-      Encrypt information into graphics
+      Hide information inside a graphic
 
 %section#cryptographic
   #display
@@ -23,9 +23,7 @@
       %p
         This all happens without sending your password or secret over the internet.
 
-
-
-%section#creating
+%section#creating.creation
   .guttered
     %h2
       Create a cryptographic
@@ -40,8 +38,8 @@
   .guttered
     %form#download-it{:action=>"/download", :method => "post"}
       %h2
-        Download this image
-      %button#save{:type=>"submit"} Create SVG
+        Download this image (desktop only)
+      %button#save{:type=>"submit"} Download an SVG
       %p
         The image is generated locally, so this does not send any data via the web.
 

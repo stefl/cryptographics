@@ -105,7 +105,7 @@ $(function() {
 
   window.paper = Raphael("display", width, height);
 
-  function generate() {
+  function generate(scrolling) {
     console.log("generating");
 
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
@@ -142,11 +142,14 @@ $(function() {
         }
       }
     }
+    if(scrolling) {
+      $.scrollTo( '#display', 800);
+    }
   }
 
   $("#generate").click(function(e) {
     e.preventDefault();
-    generate();
+    generate(true);
   });
 
   $("#save").click(function(e) {
@@ -164,5 +167,7 @@ $(function() {
 
   $('#flash').delay(4000).fadeOut();
 
-  generate();
+  generate(false);
+  $("#secret").val("");
+  $("#password").val("");
 });
