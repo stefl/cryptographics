@@ -17,6 +17,10 @@ get "/quilt" do
   haml :quilt
 end
 
+get "/pin" do
+  haml :quilt
+end
+
 get "/object" do
   haml :object
 end
