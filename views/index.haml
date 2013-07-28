@@ -1,0 +1,13 @@
+.hero
+  %h1
+    Cryptographics
+  %h2
+    Encode secrets into objects
+
+  #display
+  %label{:for=>"secret"} What's your secret?
+  %textarea#secret{:name=>"secret"} A very important thing that you want to keep secret
+  %label{:for=>"password"} What will be the password for your image?
+  %input#password{:name=>"password", :value=> "A strong password"}
+
+  %button#generate{:type=>"submit"} Generate your cryptographic

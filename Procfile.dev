@@ -1,0 +1,2 @@
+compass: bundle exec compass watch --poll
+web: bundle exec guard
