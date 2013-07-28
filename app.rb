@@ -1,8 +1,13 @@
 require "sinatra"
 require "haml"
 require "padrino-helpers"
+require "pony"
+require 'sinatra/flash'
+require "base64"
 
 helpers Padrino::Helpers
+
+enable :sessions
 
 get "/" do
   haml :index
@@ -13,7 +18,7 @@ post "/download" do
   params[:svg]
 end
 
-post "/send" do
+post "/email" do
   Pony.options = {
     :via => :smtp,
     :via_options => {
@@ -26,5 +31,14 @@ post "/send" do
       :enable_starttls_auto => true
     }
   }
-  Pony.mail(:to => params[:email], :from => 'cryptographics@makeshift.io', :subject => 'Your cryptographic', :body => 'Shhh... here is your cryptographic', :attachments => {"cryptographic.svg" => params[:svg]})
+  attach = params[:svg]
+  Pony.mail(:to => params[:email],
+    :from => 'cryptographics@makeshift.io',
+    :subject => 'Your cryptographic',
+    :body => 'Shhh... here is your cryptographic',
+    :attachments => {"cryptographic.svg" => Base64.encode64(attach) },
+    :headers => { "Content-Transfer-Encoding" => "base64" }
+  )
+  flash[:success] = "Your email has been sent"
+  redirect "/"
 end

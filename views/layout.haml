@@ -8,10 +8,16 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
+    %link{:href=>"/images/icon57x57.png", :rel=>'shortcut icon'}
+    %link{:href=>"/images/icon57x57.png", :rel=>'apple-touch-icon-precomposed', :sizes=>'57x57'}
+    %link{:href=>"/images/icon-72x72.png", :rel=>'apple-touch-icon-precomposed', :sizes=>'72x72'}
+    %link{:href=>"/images/icon-114x114.png", :rel=>'apple-touch-icon-precomposed', :sizes=>'114x114'}
+    %link{:href=>"/images/icon-144x144.png", :rel=>'apple-touch- icon-precomposed', :sizes=>'144x144'}
+
     %title
       Cryptographics
     = stylesheet_link_tag    "app"
-    = javascript_include_tag "jquery-#{settings.environment}", "raphael", "raphael.export", "gibberish", "application"
+    = javascript_include_tag "jquery-#{settings.environment}", "filesaver", "raphael", "raphael.export", "gibberish", "application"
     = yield_content(:javascript)
     = yield_content(:head)
     <script type="text/javascript" src="//use.typekit.net/vqa1rqe.js"></script>
@@ -19,4 +25,8 @@
 
   %body
     .container
+      - if success = flash[:success]
+        #flash
+          %h2
+            = success
       = yield

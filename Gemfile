@@ -13,3 +13,5 @@ gem 'guard', :group => :development
 gem 'zurb-foundation', "4.1.5", :group => :development
 gem 'susy', :group => :development
 gem "padrino"
+gem "pony"
+gem "sinatra-flash"

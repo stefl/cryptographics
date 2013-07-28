@@ -152,17 +152,17 @@ $(function() {
   $("#save").click(function(e) {
     e.preventDefault();
     svgString = paper.toSVG();
-    a = document.createElement('a');
     blob = new Blob([svgString], {type: "image/svg+xml;charset=utf-8"});
-    a.href = (window.URL || webkitURL).createObjectURL(blob);
-    a.click();
+    saveAs(blob, "cryptographic.svg");
   });
 
   $("#send").click(function(e) {
     e.preventDefault();
-    $(".svg").val(paper.toDataURL());
+    $(".svg").val(paper.toSVG());
     $("#send-it").submit();
   });
+
+  $('#flash').delay(4000).fadeOut();
 
   generate();
 });

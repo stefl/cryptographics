@@ -12,8 +12,6 @@
   #options.centered
     %p
       %a{:href=>"#download"} Download
-      or
-      %a{:href=>"#send"} Send via email
 
 %section#hero
   .hero.guttered
@@ -41,24 +39,23 @@
 %section#download
   .guttered
     %form#download-it{:action=>"/download", :method => "post"}
-      %input.svg{:name=>"svg", :type=>"hidden", :value=>""}
       %h2
         Download this image
       %button#save{:type=>"submit"} Create SVG
       %p
-        On the subsequent page, choose "Save as..." from the file menu. This happens locally, so your image is not on the internet.
+        The image is generated locally, so this does not send any data via the web.
 
-%section#send
-  .guttered
-    %form#send-it{:action=>"/email", :method=>"post"}
-      %input.svg{:name=>"svg", :type=>"hidden", :value=>""}
-      %h2
-        Email this image
-      %label{:for=>"email"}
+- if false
+  %section#sending
+    .guttered
+      %form#send-it{:action=>"/email", :method=>"post", :enctype=>"multipart/form-data"}
+        %input.svg{:name=>"svg", :type=>"hidden", :value=>""}
+        %h2
+          Email this image
         %input#email{:name=>"email", :type=>"email", :placeholder=>"you@example.com"}
-      %button#send{:type=>"submit"} Send the image
-      %p
-        To do this, the image is sent back to the server. It does not include the secret or password and does not log the image anywhere.
+        %button#send{:type=>"submit"} Send the image
+        %p
+          To do this, the image is sent back to the server. It does not include the secret or password and does not log the image anywhere.
 %section
 %section#credits
   .guttered
@@ -66,10 +63,9 @@
       Made by
       = succeed(",") do
         %a{:href=>"http://twitter.com/stef"} @stef
-      and
       %a{:href=>"http://lizbarile.com"}
         Liz
-      at
+      and friends at
       = succeed(".") do
         %a{:href=>"https://www.hackerleague.org/hackathons/digital-sizzle-9-art-hack"}
           Digital Sizzle 9
