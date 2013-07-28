@@ -32,7 +32,10 @@
       %p
         This all happens without sending your password or secret over the internet.
       %p
-        For the crypto-geeks, it's AES, although the same method could be applied to the results of an SSL encryption.
+        For the crypto-geeks, the encryption is via
+        = succeed(".") do
+          %a{:href=>"https://github.com/mdp/gibberish-aes"}
+            OpenSSL compatible AES
 
 %section#creating.creation
   .guttered
