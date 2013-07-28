@@ -144,7 +144,8 @@ $(function() {
     }
   }
 
-  $("#generate").click(function() {
+  $("#generate").click(function(e) {
+    e.preventDefault();
     generate();
   });
 

@@ -8,6 +8,11 @@ get "/" do
   haml :index
 end
 
+post "/download" do
+  content_type "image/svg"
+  request.body.read
+end
+
 post "/send" do
   Pony.options = {
     :via => :smtp,

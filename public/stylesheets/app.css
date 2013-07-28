@@ -5885,12 +5885,18 @@ h2 {
   }
 }
 
-/* line 35, ../../sass/app.scss */
+/* line 34, ../../sass/app.scss */
+#options {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+/* line 39, ../../sass/app.scss */
 #create, #send {
   margin-bottom: 3em;
 }
 
-/* line 39, ../../sass/app.scss */
+/* line 43, ../../sass/app.scss */
 section {
   width: 100%;
   float: right;
@@ -5900,21 +5906,21 @@ section {
   margin-bottom: 3em;
 }
 
-/* line 44, ../../sass/app.scss */
+/* line 48, ../../sass/app.scss */
 .hero {
   margin-top: 3em;
 }
-/* line 46, ../../sass/app.scss */
+/* line 50, ../../sass/app.scss */
 .hero h1 {
   text-align: center;
 }
-/* line 49, ../../sass/app.scss */
+/* line 53, ../../sass/app.scss */
 .hero h2 {
   text-align: center;
   margin-bottom: 3em;
 }
 
-/* line 55, ../../sass/app.scss */
+/* line 59, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;

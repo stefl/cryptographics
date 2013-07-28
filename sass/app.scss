@@ -31,6 +31,10 @@ h2 {
     @include pre(3);
   }
 }
+#options {
+  @include leader(1);
+  text-align: center;
+}
 
 #create, #send {
   @include trailer(2);
