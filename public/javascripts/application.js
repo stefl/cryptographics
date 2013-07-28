@@ -149,5 +149,20 @@ $(function() {
     generate();
   });
 
+  $("#save").click(function(e) {
+    e.preventDefault();
+    svgString = paper.toSVG();
+    a = document.createElement('a');
+    blob = new Blob([svgString], {type: "image/svg+xml;charset=utf-8"});
+    a.href = (window.URL || webkitURL).createObjectURL(blob);
+    a.click();
+  });
+
+  $("#send").click(function(e) {
+    e.preventDefault();
+    $(".svg").val(paper.toDataURL());
+    $("#send-it").submit();
+  });
+
   generate();
 });

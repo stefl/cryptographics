@@ -10,7 +10,7 @@ end
 
 post "/download" do
   content_type "image/svg"
-  request.body.read
+  params[:svg]
 end
 
 post "/send" do
@@ -26,5 +26,5 @@ post "/send" do
       :enable_starttls_auto => true
     }
   }
-  Pony.mail(:to => params[:email], :from => 'cryptographics@makeshift.io', :subject => 'Your cryptographic', :body => 'Shhh... here is your cryptographic', :attachments => {"cryptographic.svg" => request.body.read})
+  Pony.mail(:to => params[:email], :from => 'cryptographics@makeshift.io', :subject => 'Your cryptographic', :body => 'Shhh... here is your cryptographic', :attachments => {"cryptographic.svg" => params[:svg]})
 end

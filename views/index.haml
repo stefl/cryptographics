@@ -40,21 +40,23 @@
       No information is sent anywhere – this all happens locally in your browser.
 %section#download
   .guttered
-    %form{:action=>"/download", :method => "post"}
+    %form#download-it{:action=>"/download", :method => "post"}
+      %input.svg{:name=>"svg", :type=>"hidden", :value=>""}
       %h2
         Download this image
-      %button#save{:type=>"submit"} Save as an SVG
+      %button#save{:type=>"submit"} Create SVG
       %p
-        To do this, the image is sent back to the server. It does not include the secret or password and does not log the image anywhere.
+        On the subsequent page, choose "Save as..." from the file menu. This happens locally, so your image is not on the internet.
 
 %section#send
   .guttered
-    %form{:action=>"/email", :method=>"post"}
+    %form#send-it{:action=>"/email", :method=>"post"}
+      %input.svg{:name=>"svg", :type=>"hidden", :value=>""}
       %h2
         Email this image
       %label{:for=>"email"}
         %input#email{:name=>"email", :type=>"email", :placeholder=>"you@example.com"}
-      %button#download{:type=>"submit"} Send the image
+      %button#send{:type=>"submit"} Send the image
       %p
         To do this, the image is sent back to the server. It does not include the secret or password and does not log the image anywhere.
 %section
