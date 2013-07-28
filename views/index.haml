@@ -17,7 +17,10 @@
   .hero.guttered
     .intro
       %p
-        Take a piece of secret information, encrypt it with a password and turn it into an image that you can print out, turn into
+        Take a piece of
+        = succeed(",") do
+          %a{:href=>"/pin"} secret information
+        encrypt it with a password and turn it into an image that you can print out, turn into
         = succeed(",") do
           %a{:href=>"/object"} an artwork
         make into a
@@ -28,6 +31,8 @@
         The image holds an encrypted version of whatever secret you choose to put into it, and can be decoded by anyone who you give the password to.
       %p
         This all happens without sending your password or secret over the internet.
+      %p
+        For the crypto-geeks, it's AES, although the same method could be applied to the results of an SSL encryption.
 
 %section#creating.creation
   .guttered
