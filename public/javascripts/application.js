@@ -133,10 +133,10 @@ $(function() {
           var right = "M" + (left_gutter + (col * square) + square) + " " + row * square + "l 0 " + square + " l" + (0-half) + " " + (0 - half) + "z";
           var bottom = "M" + (left_gutter + col * square) + " " + ((row * square) + square) + "l" + square + " 0 l" + (0-half) + " " + (0 - half) + "z";
 
-          paper.path(top).attr({fill: colors[language[character][0]], "stroke-width": 0.3, stroke: colors[language[character][0]]});
-          paper.path(right).attr({fill: colors[language[character][1]], "stroke-width": 0.3, stroke: colors[language[character][1]]});
-          paper.path(bottom).attr({fill: colors[language[character][2]], "stroke-width": 0.3, stroke: colors[language[character][2]]});
-          paper.path(left).attr({fill: colors[language[character][3]], "stroke-width": 0.3, stroke: colors[language[character][3]]});
+          paper.path(top).attr({fill: colors[language[character][0]], "stroke-width": 0.2, stroke: colors[language[character][0]]});
+          paper.path(right).attr({fill: colors[language[character][1]], "stroke-width": 0.2, stroke: colors[language[character][1]]});
+          paper.path(bottom).attr({fill: colors[language[character][2]], "stroke-width": 0.2, stroke: colors[language[character][2]]});
+          paper.path(left).attr({fill: colors[language[character][3]], "stroke-width": 0.2, stroke: colors[language[character][3]]});
 
           console.log(character, col, row, language[character][0]);
         }

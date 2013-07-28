@@ -16,6 +16,31 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
 }
 
+h2 {
+  @include adjust-font-size-to($base-font-size * 1.5, $lines: 1);
+}
+
+.intro {
+  @include trailer(2);
+}
+
+.guttered {
+  @include span-columns(12 omega, 12);
+  @include at-breakpoint(40em 12) {
+    @include span-columns(6, 12);
+    @include pre(3);
+  }
+}
+
+#create, #send {
+  @include trailer(2);
+}
+
+section {
+  @include span-columns(12 omega, 12);
+  @include trailer(2);
+}
+
 .hero {
   @include leader(2);
   h1 {
@@ -23,6 +48,7 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
   }
   h2 {
     text-align: center;
+    @include trailer(2);
   }
 }
 

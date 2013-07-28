@@ -5857,19 +5857,64 @@ a.th {
 }
 
 /* line 19, ../../sass/app.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+/* line 23, ../../sass/app.scss */
+.intro {
+  margin-bottom: 3em;
+}
+
+/* line 27, ../../sass/app.scss */
+.guttered {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+@media (min-width: 40em) {
+  /* line 27, ../../sass/app.scss */
+  .guttered {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+    margin-left: 25.42373%;
+  }
+}
+
+/* line 35, ../../sass/app.scss */
+#create, #send {
+  margin-bottom: 3em;
+}
+
+/* line 39, ../../sass/app.scss */
+section {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  margin-bottom: 3em;
+}
+
+/* line 44, ../../sass/app.scss */
 .hero {
   margin-top: 3em;
 }
-/* line 21, ../../sass/app.scss */
+/* line 46, ../../sass/app.scss */
 .hero h1 {
   text-align: center;
 }
-/* line 24, ../../sass/app.scss */
+/* line 49, ../../sass/app.scss */
 .hero h2 {
   text-align: center;
+  margin-bottom: 3em;
 }
 
-/* line 29, ../../sass/app.scss */
+/* line 55, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;

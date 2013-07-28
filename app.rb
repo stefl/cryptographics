@@ -7,3 +7,19 @@ helpers Padrino::Helpers
 get "/" do
   haml :index
 end
+
+post "/send" do
+  Pony.options = {
+    :via => :smtp,
+    :via_options => {
+      :address => 'smtp.sendgrid.net',
+      :port => '587',
+      :domain => 'heroku.com',
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+  }
+  Pony.mail(:to => params[:email], :from => 'cryptographics@makeshift.io', :subject => 'Your cryptographic', :body => 'Shhh... here is your cryptographic', :attachments => {"cryptographic.svg" => request.body.read})
+end
