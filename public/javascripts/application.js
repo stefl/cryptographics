@@ -118,6 +118,7 @@ $(function() {
     if((square * rows) > ($(window).height() * 0.75)) {
       square = Math.floor((($(window).height() * 0.75) / rows) / 2) * 2;
     }
+
     var half = square/2;
     var left_gutter = (width - (columns * square))/2;
     paper.setSize(width, rows*square);

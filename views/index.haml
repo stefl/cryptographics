@@ -3,11 +3,12 @@
     Cryptographics
   %h2
     Encode secrets into objects
+  %p
+    Take a piece of information, encrypt it with a password and turn it into an image that you can print out, turn into an artwork, make into a quilt, or put anywhere else you can put a two dimensional design. The image holds an encrypted version of whatever secret you choose to put into it, and can be decoded by anyone who you give the password to.
 
   #display
   %label{:for=>"secret"} What's your secret?
   %textarea#secret{:name=>"secret"} A very important thing that you want to keep secret
   %label{:for=>"password"} What will be the password for your image?
   %input#password{:name=>"password", :value=> "A strong password"}
-
-  %button#generate{:type=>"submit"} Generate your cryptographic
+  %button#generate{:type=>"submit"} Cryptographic please
