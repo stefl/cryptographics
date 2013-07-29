@@ -110,7 +110,7 @@ $(function() {
     console.log("generating");
 
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
-    var encrypted_secret = GibberishAES.enc("\0" + $("#secret").val(), $("#password").val());
+    var encrypted_secret = "\0" + GibberishAES.enc($("#secret").val(), $("#password").val());
     var chars = encrypted_secret.split('');
     var columns = Math.floor(Math.sqrt(chars.length));
     var rows = Math.ceil(chars.length / columns);

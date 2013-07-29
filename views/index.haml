@@ -1,9 +1,10 @@
 %section#ident
   .hero
 
-    %h1
+    %h1<
       %img{:src=>"/images/cryptographics-logo-512.png", :width=>"64", :height=>"64"}
-      Cryptographics
+      %span.logo> Cryptographics
+      %span.io> .io
     %h2
       Hide information inside a graphic
 
@@ -41,11 +42,11 @@
   .guttered
     %h2
       Create a cryptographic
-    %label{:for=>"secret"} What's your secret?
-    %textarea#secret{:name=>"secret"} A very important thing that you want to keep secret
+    %label{:for=>"secret"} What's the secret you want to encrypt into an image?
+    %textarea#secret{:name=>"secret", :placeholder=>"A very important thing that you want to keep secret"} A very important thing that you want to keep secret
     %label{:for=>"password"} What will be the password for your image?
-    %input#password{:type=>"text", :name=>"password", :value=> "A strong password"}
-    %button#generate{:type=>"submit"} Generate a cryptographic
+    %input#password{:type=>"text", :name=>"password", :value=> "A strong password", :placeholder => "A password of your choice"}
+    %button#generate{:type=>"submit"} Generate your cryptographic image
     %p
       Keep this password safe — it's not stored anywhere by this service. No information is sent anywhere – this all happens locally in your browser.
 %section#download
