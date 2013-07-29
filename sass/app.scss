@@ -56,6 +56,18 @@ img.full {
   }
 }
 
+.thirds {
+  @include span-columns(12 omega, 12);
+  @include at-breakpoint(40em 12) {
+    .third {
+      @include span-columns(4, 12);
+      &:nth-child(3) {
+        @include omega();
+      }
+    }
+  }
+}
+
 .creation {
   background-color: #ffd;
   @include padding-leader(1);
@@ -97,6 +109,9 @@ section {
   @include padding-trailer(1);
 }
 
+#credits {
+  @include trailer(16);
+}
 
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing

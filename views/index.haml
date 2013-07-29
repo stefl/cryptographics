@@ -12,9 +12,22 @@
   #display
   #options.centered
     %p
-      %a{:href=>"#download"} Download
+      %a{:href=>"#creating"} Create a new one
+      |
+      %a{:href=>"#download"} Download options
 
 %section#hero
+  .examples
+    .thirds
+      .third
+        %a{:href=>"/quilt"}
+          %img{:src=>"/images/quilt-small.jpg", :alt=>"A cryptographic quilt", :width=>"480", :height=>"320"}
+      .third
+        %a{:href=>"/object"}
+          %img{:src=>"/images/object-small.jpg", :alt=>"A cryptographic art object", :width=>"480", :height=>"320"}
+      .third
+        %a{:href=>"/pin"}
+          %img{:src=>"/images/pin-small.jpg", :alt=>"A cryptographic representation of a PIN", :width=>"480", :height=>"320"}
   .hero.guttered
     .intro
       %p
@@ -69,9 +82,27 @@
         %button#send{:type=>"submit"} Send the image
         %p
           To do this, the image is sent back to the server. It does not include the secret or password and does not log the image anywhere.
-%section
+
+%section#about
+  .guttered
+    %h2
+      About this project
+    %p
+      This is a two-day hack project coded and designed by
+      %a{:href=>"http://twitter.com/stef"} Stef Lewandowski
+      in collaboration with artist and photographer
+      = succeed(".") do
+        %a{:href=>"http://twitter.com/lovelylizz"} Liz Barile
+    %p
+      This was one of the ~25 hacks that were made over a weekend at Digital Sizzle's
+      Arthack
+      = succeed(",") do
+        %a{:href=>"http://thedigitalsizzle.com/"} ="#sizzle9"
+      held at South Place Hotel. The brief was to collaborate around using data in the creation of artworks.
 %section#credits
   .guttered
+    %h2
+      Credits
     %p
       Made by
       = succeed(",") do
