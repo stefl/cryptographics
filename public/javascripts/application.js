@@ -107,14 +107,11 @@ $(function() {
   window.paper = Raphael("display", width, height);
 
   function generate(scrolling) {
-    console.log("generating");
-
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
-    var encrypted_secret = "\0" + GibberishAES.enc($("#secret").val(), $("#password").val());
-    var chars = encrypted_secret.split('');
+    window.encrypted_secret = "\0" + GibberishAES.enc($("#secret").val(), $("#password").val());
+    var chars = window.encrypted_secret.split('');
     var columns = Math.floor(Math.sqrt(chars.length));
     var rows = Math.ceil(chars.length / columns);
-    console.log(chars.length,columns, rows);
     var square = Math.floor((width / columns)/2)*2;
     if((square * rows) > ($(window).height() * 0.75)) {
       square = Math.floor((($(window).height() * 0.75) / rows) / 2) * 2;
@@ -128,7 +125,8 @@ $(function() {
     for(var row = 0; row < rows; row++) {
       for(var col = 0; col < columns; col++ ) {
         var character = chars[row*columns + col];
-        if(character) {
+        console.log("character",character);
+        if(character !== undefined) {
           var left = "M" + (left_gutter + col * square) + " " + row * square + "l" + half + " " + half + " l " + (0 - half) + " " + half + "z";
           var top = "M" + (left_gutter + col * square) + " " + row * square + "l" + square + " 0 l" + (0-half) + " " + half + "z";
           var right = "M" + (left_gutter + (col * square) + square) + " " + row * square + "l 0 " + square + " l" + (0-half) + " " + (0 - half) + "z";
@@ -138,8 +136,10 @@ $(function() {
           paper.path(right).attr({fill: colors[language[character][1]], "stroke-width": 0.2, stroke: colors[language[character][1]]});
           paper.path(bottom).attr({fill: colors[language[character][2]], "stroke-width": 0.2, stroke: colors[language[character][2]]});
           paper.path(left).attr({fill: colors[language[character][3]], "stroke-width": 0.2, stroke: colors[language[character][3]]});
-
-          console.log(character, col, row, language[character][0]);
+        }
+        else {
+          var character_above = chars[(row-1)*columns + col];
+          paper.rect(left_gutter + col*square, row * square, square, square).attr({fill: colors[language[character_above][2]], "stroke-width": 0.2, stroke: colors[language[character_above][2]]});
         }
       }
     }
