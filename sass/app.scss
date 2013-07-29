@@ -19,7 +19,7 @@ $light-blue: #00deef;
 
 h2 {
   @include adjust-font-size-to($base-font-size * 1.5, $lines: 1);
-  color:
+  color: $light-blue;
 }
 
 img.full {

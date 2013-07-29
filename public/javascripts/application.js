@@ -66,7 +66,7 @@ $(function() {
     ")": [b,r,w,b],
     "—": [r,b,w,r],
     "+": [w,r,b,w],
-    "-": [w,b,r,w], // something wrong with encoding here I think
+    "-": [w,b,r,w], // something wrong with encoding here I think. Should be emdash?
     "=": [r,w,b,b],
     "[": [b,w,r,r],
     "]": [r,b,w,w],
@@ -92,7 +92,8 @@ $(function() {
     "9": [b,w,w,g],
     "0": [g,w,w,b],
     "\n": [b,b,g,w],
-    "!": [g,g,b,1]
+    "!": [g,g,b,w],
+    "\0": [0,1,2,3] // reserved for the colour indicator square at [0]
   };
 
   var width = $("#display").width();
@@ -109,7 +110,7 @@ $(function() {
     console.log("generating");
 
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
-    var encrypted_secret = GibberishAES.enc($("#secret").val(), $("#password").val());
+    var encrypted_secret = GibberishAES.enc("\0" + $("#secret").val(), $("#password").val());
     var chars = encrypted_secret.split('');
     var columns = Math.floor(Math.sqrt(chars.length));
     var rows = Math.ceil(chars.length / columns);
