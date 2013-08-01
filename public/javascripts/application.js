@@ -99,7 +99,7 @@ $(function() {
   function generate(scrolling) {
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
     if($("#password").val() == "") {
-      window.encrypted_secret = $("#secret").val();
+      window.encrypted_secret = "\0" + $("#secret").val();
     } else {
       window.encrypted_secret = "\0" + GibberishAES.enc($("#secret").val(), $("#password").val());
     }
