@@ -9,8 +9,12 @@
     %h2
       Hide information inside a graphic
 
-%section
-  %img.full{:src=>"/images/cryptographic-pin.png"}
+%section#cryptographic
+  %input#secret{:type=>"hidden", :value=>"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@#&*()—+-=[]{};':\",./?\n!"}
+  %input#password{:type=>"hidden",:value=>""}
+  #display.include_labels
+
+%section#how_to_decode
   .guttered
     %h2
       How to decode an image
@@ -48,7 +52,7 @@
           %label{:for=>"encryption_password"} What you think the password is
           %input#encryption_password{:type=>"text", :name=>"encryption_password"}
         .r
-          %button#decode.btn{:type=>"submit"} Decode it
+          %button.btn.btn--primary#decode.btn{:type=>"submit"} Decode it
 
 :javascript
   $(function() {

@@ -10,7 +10,7 @@
 /* line 225, ../../../../../Users/stef/.rvm/gems/ruby-2.0.0-p0/gems/zurb-foundation-4.1.5/scss/foundation/components/_global.scss */
 html,
 body {
-  font-size: 100%;
+  font-size: 16px;
 }
 
 /* line 228, ../../../../../Users/stef/.rvm/gems/ruby-2.0.0-p0/gems/zurb-foundation-4.1.5/scss/foundation/components/_global.scss */
@@ -5839,7 +5839,9 @@ a.th {
   max-width: 800px;
 }
 
-/* line 15, ../../sass/app.scss */
+/*------- From Bootstrap -------*/
+/*------- From Intuit.css -------*/
+/* line 20, ../../sass/app.scss */
 .container {
   *zoom: 1;
   max-width: 59em;
@@ -5856,46 +5858,46 @@ a.th {
   clear: both;
 }
 
-/* line 20, ../../sass/app.scss */
+/* line 25, ../../sass/app.scss */
 .io {
   font-weight: 100;
 }
 
-/* line 24, ../../sass/app.scss */
+/* line 29, ../../sass/app.scss */
 h2 {
   font-size: 1.5em;
   line-height: 1em;
   color: #00deef;
 }
 
-/* line 29, ../../sass/app.scss */
+/* line 34, ../../sass/app.scss */
 .btn {
   font-family: "effra", sans-serif;
 }
 
-/* line 33, ../../sass/app.scss */
+/* line 38, ../../sass/app.scss */
 label {
   color: #555555;
   font-family: "effra", sans-serif;
   font-weight: 700;
 }
 
-/* line 39, ../../sass/app.scss */
+/* line 44, ../../sass/app.scss */
 img.full {
   width: 100%;
   margin-bottom: 3em;
 }
 
-/* line 44, ../../sass/app.scss */
+/* line 49, ../../sass/app.scss */
 #ident {
   margin-bottom: 0em;
 }
-/* line 46, ../../sass/app.scss */
+/* line 51, ../../sass/app.scss */
 #ident a {
   text-decoration: none;
 }
 
-/* line 51, ../../sass/app.scss */
+/* line 56, ../../sass/app.scss */
 .guttered {
   width: 100%;
   float: right;
@@ -5904,7 +5906,7 @@ img.full {
   display: inline;
 }
 @media (min-width: 40em) {
-  /* line 51, ../../sass/app.scss */
+  /* line 56, ../../sass/app.scss */
   .guttered {
     width: 49.15254%;
     float: left;
@@ -5913,7 +5915,7 @@ img.full {
   }
 }
 
-/* line 59, ../../sass/app.scss */
+/* line 64, ../../sass/app.scss */
 .thirds {
   width: 100%;
   float: right;
@@ -5922,48 +5924,48 @@ img.full {
   display: inline;
 }
 @media (min-width: 40em) {
-  /* line 62, ../../sass/app.scss */
+  /* line 67, ../../sass/app.scss */
   .thirds .third {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 64, ../../sass/app.scss */
+  /* line 69, ../../sass/app.scss */
   .thirds .third:nth-child(3) {
     float: right;
     margin-right: 0;
   }
 }
 
-/* line 71, ../../sass/app.scss */
+/* line 76, ../../sass/app.scss */
 .creation, #decoder {
   background-color: #ffd;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 77, ../../sass/app.scss */
+/* line 82, ../../sass/app.scss */
 #cryptographic {
   margin-bottom: 0em;
 }
 
-/* line 81, ../../sass/app.scss */
+/* line 86, ../../sass/app.scss */
 .r {
   margin-bottom: 1.5em;
 }
 
-/* line 85, ../../sass/app.scss */
+/* line 90, ../../sass/app.scss */
 #options {
   margin-top: 1.5em;
   text-align: center;
 }
 
-/* line 90, ../../sass/app.scss */
+/* line 95, ../../sass/app.scss */
 #create, #send {
   margin-bottom: 3em;
 }
 
-/* line 94, ../../sass/app.scss */
+/* line 99, ../../sass/app.scss */
 section {
   width: 100%;
   float: right;
@@ -5973,28 +5975,152 @@ section {
   margin-bottom: 3em;
 }
 
-/* line 99, ../../sass/app.scss */
+/* line 104, ../../sass/app.scss */
 .hero {
   margin-top: 3em;
 }
-/* line 101, ../../sass/app.scss */
+/* line 106, ../../sass/app.scss */
 .hero h1 {
   text-align: center;
 }
-/* line 104, ../../sass/app.scss */
+/* line 109, ../../sass/app.scss */
 .hero h2 {
   text-align: center;
   margin-bottom: 3em;
 }
 
-/* line 110, ../../sass/app.scss */
+/* line 115, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 116, ../../sass/app.scss */
+/* line 121, ../../sass/app.scss */
 #credits {
   margin-bottom: 24em;
+}
+
+/* line 125, ../../sass/app.scss */
+#how_to_decode {
+  margin-top: 3em;
+}
+
+/* line 13, ../../sass/_buttons.scss */
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: no-wrap;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  font-size: 1em;
+  line-height: 2.25em;
+  padding: 0 1em;
+  text-align: center;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+/* line 25, ../../sass/_buttons.scss */
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+/* line 29, ../../sass/_buttons.scss */
+.btn:hover, .btn:focus {
+  text-decoration: none;
+}
+/* line 33, ../../sass/_buttons.scss */
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  cursor: default;
+  pointer-events: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
+  opacity: 0.65;
+}
+/* line 39, ../../sass/_buttons.scss */
+.btn .ss-icon {
+  font-size: .8125em;
+  line-height: 1;
+  margin-right: .5em;
+}
+
+/* line 46, ../../sass/_buttons.scss */
+.btn--small {
+  font-size: 0.75em;
+  line-height: 1.6em;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+
+/* line 53, ../../sass/_buttons.scss */
+.btn--bigger {
+  font-size: 1em;
+  line-height: 3em;
+  padding: 0 1.5em;
+}
+
+/* line 58, ../../sass/_buttons.scss */
+.btn--huge {
+  font-size: 1em;
+  line-height: 3.75em;
+}
+
+@media (max-width: 40em) {
+  line-height: 1.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+/* line 68, ../../sass/_buttons.scss */
+.btn--full {
+  width: 100%;
+  padding: 0;
+}
+
+/* line 73, ../../sass/_buttons.scss */
+.btn--generic, .btn--primary {
+  background: #ddd;
+  color: white;
+}
+/* line 76, ../../sass/_buttons.scss */
+.btn--generic:hover, .btn--primary:hover {
+  background: #c4c4c4;
+  color: #222;
+}
+
+/* line 82, ../../sass/_buttons.scss */
+.btn--primary {
+  background: #00deef;
+  color: #fff !important;
+  text-shadow: 0 2px 0 #00717a;
+  overflow: hidden;
+  -webkit-box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.14);
+  box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.14);
+}
+/* line 21, ../../sass/_mixins.scss */
+.btn--primary:hover, .btn--primary:active, .btn--primary:focus {
+  background: #00afbc;
+  color: #fff !important;
+}
+/* line 29, ../../sass/_mixins.scss */
+.btn--primary:active {
+  -webkit-box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1), inset 1px 0 0 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+/* line 87, ../../sass/_buttons.scss */
+.btn--secondary {
+  background: #3cabb3;
+  color: white;
+}
+/* line 90, ../../sass/_buttons.scss */
+.btn--secondary:hover {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
 }

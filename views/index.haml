@@ -12,9 +12,9 @@
   #display
   #options.centered
     %p
-      %a{:href=>"#creating"} Create a new one
-      |
-      %a{:href=>"#download"} Download options
+      %a.button.btn.btn--primary{:href=>"#creating"} Create an image
+    %p
+      %a{:href=>"#download"} Download this image
 
 %section#hero
   .examples
@@ -66,7 +66,7 @@
       %p
         Leave the password blank to generate an image without encryption.
     .r
-      %button#generate{:type=>"submit"} Generate your cryptographic image
+      %button.btn.btn--primary#generate{:type=>"submit"} Generate your cryptographic image
       %p
         Keep your password safe — it's not stored anywhere by this service. No information is sent anywhere – this all happens locally in your browser.
 %section#download
@@ -74,7 +74,7 @@
     %form#download-it{:action=>"/download", :method => "post"}
       %h2
         Download this image (desktop only)
-      %button#save{:type=>"submit"} Download an SVG
+      %button.btn.btn--primary#save{:type=>"submit"} Download an SVG
       %p
         The image is generated locally, so this does not send any data via the web. This uses some modern HTML5 features, so if it doesn't work, please try using Google Chrome.
 
@@ -86,7 +86,7 @@
         %h2
           Email this image
         %input#email{:name=>"email", :type=>"email", :placeholder=>"you@example.com"}
-        %button#send{:type=>"submit"} Send the image
+        %button.btn.btn--primary#send{:type=>"submit"} Send the image
         %p
           To do this, the image is sent back to the server. It does not include the secret or password and does not log the image anywhere.
 

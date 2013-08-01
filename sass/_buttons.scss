@@ -1,0 +1,94 @@
+$btn-primary: $light-blue;
+$btn-secondary: desaturate($light-blue, 50);
+
+@mixin moving-button {
+  &:active, &:active {
+    position: relative;
+    top: 1px;
+    border-bottom-width: 2px;
+    margin-bottom: 1px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: no-wrap;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  @include adjust-font-size-to($base-font-size, $lines: 1.5);
+  padding: 0 1em;
+  text-align: center;
+  @include border-radius(.2em);
+
+  &:focus {
+    @include tab-focus();
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &.disabled, &[disabled], fieldset[disabled] & {
+    cursor: default;
+    pointer-events: none;
+    @include opacity(.65);
+  }
+
+  .ss-icon {
+    font-size: .8125em;
+    line-height: 1;
+    margin-right: .5em;
+  }
+}
+
+.btn--small {
+  @include adjust-font-size-to(12px, .8);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+
+.btn--bigger {
+  @include adjust-font-size-to(16px, 2);
+  padding: 0 1.5em;
+}
+
+.btn--huge {
+  @include adjust-font-size-to(16px, 2.5);
+}
+
+@include at-breakpoint(10 40em) {
+ line-height: 1.3em;
+ padding-top: 1em;
+ padding-bottom: 1em;
+}
+
+.btn--full {
+  width: 100%;
+  padding: 0;
+}
+
+.btn--generic {
+  background: #ddd;
+  color: white;
+  &:hover {
+    background: darken(#ddd, 10%);
+    color: #222;
+  }
+}
+
+.btn--primary {
+  @extend .btn--generic;
+  @include button($btn-primary, $white: true);
+}
+
+.btn--secondary {
+  background: $btn-secondary;
+  color: white;
+  &:hover {
+    background: rgba(00,00,00,.3);
+    color: white;
+  }
+}

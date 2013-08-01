@@ -1,3 +1,6 @@
+@import "compass/css3/border-radius";
+@import "compass";
+
 // Global Foundation Settings
 @import "settings";
 
@@ -11,6 +14,8 @@ $gutter-width   : 1em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $light-blue: #00deef;
 $dark-grey: #555;
+
+@import "mixins";
 
 .container {
   // page acts as a container for our grid.
@@ -116,6 +121,12 @@ section {
 #credits {
   @include trailer(16);
 }
+
+#how_to_decode {
+  @include leader(2);
+}
+
+@import "buttons";
 
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing

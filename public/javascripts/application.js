@@ -96,7 +96,7 @@ $(function() {
     "\0": [0,1,2,3] // reserved for the colour indicator square at [0]
   };
 
-  function generate(scrolling) {
+  window.generate = function(scrolling, include_labels) {
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
     if($("#password").val() == "") {
       window.encrypted_secret = "\0" + $("#secret").val();
@@ -107,32 +107,38 @@ $(function() {
     var columns = Math.floor(Math.sqrt(chars.length));
     var rows = Math.ceil(chars.length / columns);
     var square = Math.floor((width / columns)/2)*2;
+    
     if((square * rows) > ($(window).height() * 0.75)) {
       square = Math.floor((($(window).height() * 0.75) / rows) / 2) * 2;
     }
 
+    var row_height = include_labels ? square * 2 : square;
     var half = square/2;
     var left_gutter = (width - (columns * square))/2;
-    paper.setSize(width, rows*square);
+    paper.setSize(width, rows*row_height);
+
 
     paper.clear();
     for(var row = 0; row < rows; row++) {
       for(var col = 0; col < columns; col++ ) {
         var character = chars[row*columns + col];
         if(character !== undefined) {
-          var left = "M" + (left_gutter + col * square) + " " + row * square + "l" + half + " " + half + " l " + (0 - half) + " " + half + "z";
-          var top = "M" + (left_gutter + col * square) + " " + row * square + "l" + square + " 0 l" + (0-half) + " " + half + "z";
-          var right = "M" + (left_gutter + (col * square) + square) + " " + row * square + "l 0 " + square + " l" + (0-half) + " " + (0 - half) + "z";
-          var bottom = "M" + (left_gutter + col * square) + " " + ((row * square) + square) + "l" + square + " 0 l" + (0-half) + " " + (0 - half) + "z";
+          var left = "M" + (left_gutter + col * square) + " " + row * row_height + "l" + half + " " + half + " l " + (0 - half) + " " + half + "z";
+          var top = "M" + (left_gutter + col * square) + " " + row * row_height + "l" + square + " 0 l" + (0-half) + " " + half + "z";
+          var right = "M" + (left_gutter + (col * square) + square) + " " + row * row_height + "l 0 " + square + " l" + (0-half) + " " + (0 - half) + "z";
+          var bottom = "M" + (left_gutter + col * square) + " " + ((row * row_height) + square) + "l" + square + " 0 l" + (0-half) + " " + (0 - half) + "z";
 
           paper.path(top).attr({fill: colors[language[character][0]], "stroke-width": 0.2, stroke: colors[language[character][0]]});
           paper.path(right).attr({fill: colors[language[character][1]], "stroke-width": 0.2, stroke: colors[language[character][1]]});
           paper.path(bottom).attr({fill: colors[language[character][2]], "stroke-width": 0.2, stroke: colors[language[character][2]]});
           paper.path(left).attr({fill: colors[language[character][3]], "stroke-width": 0.2, stroke: colors[language[character][3]]});
+          if(include_labels) {
+            paper.text(half + left_gutter + (col * square), row * row_height + half*3, character).attr({ "font-size": 16, "font-weight": 900, "font-color": "#444", "font-family": "effra, 'Helvetica Neue', Arial, Helvetica, sans-serif" });;
+          }
         }
         else {
           var character_above = chars[(row-1)*columns + col];
-          paper.rect(left_gutter + col*square, row * square, square, square).attr({fill: colors[language[character_above][2]], "stroke-width": 0.2, stroke: colors[language[character_above][2]]});
+          paper.rect(left_gutter + col*square, row * row_height, square, square).attr({fill: colors[language[character_above][2]], "stroke-width": 0.2, stroke: colors[language[character_above][2]]});
         }
       }
     }
@@ -143,7 +149,7 @@ $(function() {
 
   $("#generate").click(function(e) {
     e.preventDefault();
-    generate(true);
+    generate(true, false);
   });
 
   $("#save").click(function(e) {
@@ -171,7 +177,7 @@ $(function() {
     }
     
     window.paper = Raphael("display", width, height);
-    generate(false);
+    generate(false, $("#display").hasClass("include_labels"));
   }
   $("#secret").val("");
   $("#password").val("");
