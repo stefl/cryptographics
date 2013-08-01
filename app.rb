@@ -21,6 +21,10 @@ get "/pin" do
   haml :pin
 end
 
+get "/decode" do
+  haml :decode
+end
+
 get "/object" do
   haml :object
 end

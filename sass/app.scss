@@ -68,7 +68,7 @@ img.full {
   }
 }
 
-.creation {
+.creation, #decoder {
   background-color: #ffd;
   @include padding-leader(1);
   @include padding-trailer(1);
@@ -76,6 +76,10 @@ img.full {
 
 #cryptographic {
   @include trailer(0);
+}
+
+.r {
+  @include trailer(1);
 }
 
 #options {

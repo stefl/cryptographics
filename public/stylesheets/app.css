@@ -5936,7 +5936,7 @@ img.full {
 }
 
 /* line 71, ../../sass/app.scss */
-.creation {
+.creation, #decoder {
   background-color: #ffd;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -5948,17 +5948,22 @@ img.full {
 }
 
 /* line 81, ../../sass/app.scss */
+.r {
+  margin-bottom: 1.5em;
+}
+
+/* line 85, ../../sass/app.scss */
 #options {
   margin-top: 1.5em;
   text-align: center;
 }
 
-/* line 86, ../../sass/app.scss */
+/* line 90, ../../sass/app.scss */
 #create, #send {
   margin-bottom: 3em;
 }
 
-/* line 90, ../../sass/app.scss */
+/* line 94, ../../sass/app.scss */
 section {
   width: 100%;
   float: right;
@@ -5968,28 +5973,28 @@ section {
   margin-bottom: 3em;
 }
 
-/* line 95, ../../sass/app.scss */
+/* line 99, ../../sass/app.scss */
 .hero {
   margin-top: 3em;
 }
-/* line 97, ../../sass/app.scss */
+/* line 101, ../../sass/app.scss */
 .hero h1 {
   text-align: center;
 }
-/* line 100, ../../sass/app.scss */
+/* line 104, ../../sass/app.scss */
 .hero h2 {
   text-align: center;
   margin-bottom: 3em;
 }
 
-/* line 106, ../../sass/app.scss */
+/* line 110, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 112, ../../sass/app.scss */
+/* line 116, ../../sass/app.scss */
 #credits {
   margin-bottom: 24em;
 }

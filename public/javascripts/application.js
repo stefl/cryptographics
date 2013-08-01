@@ -96,19 +96,13 @@ $(function() {
     "\0": [0,1,2,3] // reserved for the colour indicator square at [0]
   };
 
-  var width = $("#display").width();
-  var height = $(window).height();
-  var aspect = "portrait";
-
-  if(width > height) {
-    aspect = "landscape";
-  }
-
-  window.paper = Raphael("display", width, height);
-
   function generate(scrolling) {
     var colors = ["#555", "#00deef", "#fce172", "#fff"];
-    window.encrypted_secret = "\0" + GibberishAES.enc($("#secret").val(), $("#password").val());
+    if($("#password").val() == "") {
+      window.encrypted_secret = $("#secret").val();
+    } else {
+      window.encrypted_secret = "\0" + GibberishAES.enc($("#secret").val(), $("#password").val());
+    }
     var chars = window.encrypted_secret.split('');
     var columns = Math.floor(Math.sqrt(chars.length));
     var rows = Math.ceil(chars.length / columns);
@@ -125,7 +119,6 @@ $(function() {
     for(var row = 0; row < rows; row++) {
       for(var col = 0; col < columns; col++ ) {
         var character = chars[row*columns + col];
-        console.log("character",character);
         if(character !== undefined) {
           var left = "M" + (left_gutter + col * square) + " " + row * square + "l" + half + " " + half + " l " + (0 - half) + " " + half + "z";
           var top = "M" + (left_gutter + col * square) + " " + row * square + "l" + square + " 0 l" + (0-half) + " " + half + "z";
@@ -168,7 +161,18 @@ $(function() {
 
   $('#flash').delay(4000).fadeOut();
 
-  generate(false);
+  if($("#display").size() > 0) {
+    var width = $("#display").width();
+    var height = $(window).height();
+    var aspect = "portrait";
+
+    if(width > height) {
+      aspect = "landscape";
+    }
+    
+    window.paper = Raphael("display", width, height);
+    generate(false);
+  }
   $("#secret").val("");
   $("#password").val("");
 });

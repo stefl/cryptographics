@@ -1,0 +1,66 @@
+%section#ident
+  .hero
+
+    %h1<
+      %a{:href=>"/"}<
+        %img{:src=>"/images/cryptographics-logo-512.png", :width=>"64", :height=>"64"}
+        %span.logo> Cryptographics
+        %span.io> .io
+    %h2
+      Hide information inside a graphic
+
+%section
+  %img.full{:src=>"/images/cryptographic-pin.png"}
+  .guttered
+    %h2
+      How to decode an image
+    %p
+      You can decode an image that's encoded by hand, and then using the box below to get the secret it contains.
+    %p
+      First, you should have some idea of what the password is that encoded the image. Without it, you're going to have a very hard time!
+    %p
+      Look at the image you want to decode. It is made up of a series of squares. The squares are divided up into triangles. The arrangement of triangles in each square equates to a letter of the alphabet, a number or a punctuation mark. Software people will recognize this as "Base64", although there are a handful of additional characters too.
+    %p
+      At one corner of the image will be a special square - the "key". It contains four coloured triangles, forming a cross. One colour may be the background colour of the artwork so it may appear to be transparent.
+    %p
+      The arrangement of those four colours is important because it tells you, starting from the top and going clockwise, what colours A, B, C and D are. Use it as a reference.
+    %p
+      That square should be at the top left. Turn the image around until it is. At the bottom right you may see some squares that are full squares. You can ignore those. The remaining squares are read just like you would a book - from left to right, in rows.
+    %p
+      Start with the first square to the right of the special "key" square, and compare each square to the list of possible squares below. Make a note of each square's value. It will look like gibberish, but don't worry! 
+    %p
+      Once you reach the end, you'll have a series of characters. Put them all together into a string of characters that looks something like "U2FsdGVkX1/JSQtCZastj+JjAqpIgLjFuzUVCX…Igt0TBGG4zpYtHyNJiMDCb1MgdCMk=". Don't worry about that last \n (endline) character, or the = sign, in fact. They're ignored.
+    %p
+      That is your "encrypted" secret. Paste that into the box below, and put in what you 
+      %strong think
+      is the password. If you've got it right, the secret will be revealed. If not, check that you've got the triangles and the colours in the right order.
+%section#decoder
+  .guttered
+    %h2
+      Decode an image
+    .decoder
+      #decoding_result
+      %form{:action=>"#", :method=>"get"}
+        .r
+          %label{:for=>"encrypted_secret"} The text that you transcribed from the image
+          %input#encrypted_secret{:type=>"text", :name=>"encrypted_secret"}
+        .r
+          %label{:for=>"encryption_password"} What you think the password is
+          %input#encryption_password{:type=>"text", :name=>"encryption_password"}
+        .r
+          %button#decode.btn{:type=>"submit"} Decode it
+
+:javascript
+  $(function() {
+    $("#decode").click(function(e) {
+      $("#decoding_result").empty();
+      e.preventDefault();
+      try {
+        var decoded_value = GibberishAES.dec($("#encrypted_secret").val(), $("#encryption_password").val());
+        $("#decoding_result").html("<h1>Yes! The secret is… " + decoded_value + "</h1>");
+      }
+      catch(err) {
+        $("#decoding_result").html("<h2>Sorry - that isn't the password</h2>");
+      }
+    });
+  });

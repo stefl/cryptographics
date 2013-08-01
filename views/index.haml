@@ -40,7 +40,9 @@
         make into a
         = succeed(",") do
           %a{:href=>"/quilt"} quilt
-        or put anywhere else you can put a two dimensional design.
+        or put anywhere else you can put a two dimensional design. Only someone with the password can 
+        %a{:href=>"/decode"} decode 
+        it again.
       %p
         The image holds an encrypted version of whatever secret you choose to put into it, and can be decoded by anyone who you give the password to.
       %p
@@ -55,13 +57,18 @@
   .guttered
     %h2
       Create a cryptographic
-    %label{:for=>"secret"} What's the secret you want to encrypt into an image?
-    %textarea#secret{:name=>"secret", :placeholder=>"A very important thing that you want to keep secret"} A very important thing that you want to keep secret
-    %label{:for=>"password"} What will be the password for your image?
-    %input#password{:type=>"text", :name=>"password", :value=> "A strong password", :placeholder => "A password of your choice"}
-    %button#generate{:type=>"submit"} Generate your cryptographic image
-    %p
-      Keep this password safe — it's not stored anywhere by this service. No information is sent anywhere – this all happens locally in your browser.
+    .r
+      %label{:for=>"secret"} What's the secret you want to encrypt into an image?
+      %textarea#secret{:name=>"secret", :placeholder=>"A very important thing that you want to keep secret"} A very important thing that you want to keep secret
+    .r
+      %label{:for=>"password"} What will be the password for your image?
+      %input#password{:type=>"text", :name=>"password", :value=> "A strong password", :placeholder => "A password of your choice"}
+      %p
+        Leave the password blank to generate an image without encryption.
+    .r
+      %button#generate{:type=>"submit"} Generate your cryptographic image
+      %p
+        Keep your password safe — it's not stored anywhere by this service. No information is sent anywhere – this all happens locally in your browser.
 %section#download
   .guttered
     %form#download-it{:action=>"/download", :method => "post"}
