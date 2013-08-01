@@ -33,6 +33,7 @@ h2 {
 
 .btn {
   font-family: $header-font-family;
+  @include trailer(1);
 }
 
 label {

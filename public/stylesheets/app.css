@@ -5873,31 +5873,32 @@ h2 {
 /* line 34, ../../sass/app.scss */
 .btn {
   font-family: "effra", sans-serif;
+  margin-bottom: 1.5em;
 }
 
-/* line 38, ../../sass/app.scss */
+/* line 39, ../../sass/app.scss */
 label {
   color: #555555;
   font-family: "effra", sans-serif;
   font-weight: 700;
 }
 
-/* line 44, ../../sass/app.scss */
+/* line 45, ../../sass/app.scss */
 img.full {
   width: 100%;
   margin-bottom: 3em;
 }
 
-/* line 49, ../../sass/app.scss */
+/* line 50, ../../sass/app.scss */
 #ident {
   margin-bottom: 0em;
 }
-/* line 51, ../../sass/app.scss */
+/* line 52, ../../sass/app.scss */
 #ident a {
   text-decoration: none;
 }
 
-/* line 56, ../../sass/app.scss */
+/* line 57, ../../sass/app.scss */
 .guttered {
   width: 100%;
   float: right;
@@ -5906,7 +5907,7 @@ img.full {
   display: inline;
 }
 @media (min-width: 40em) {
-  /* line 56, ../../sass/app.scss */
+  /* line 57, ../../sass/app.scss */
   .guttered {
     width: 49.15254%;
     float: left;
@@ -5915,7 +5916,7 @@ img.full {
   }
 }
 
-/* line 64, ../../sass/app.scss */
+/* line 65, ../../sass/app.scss */
 .thirds {
   width: 100%;
   float: right;
@@ -5924,48 +5925,48 @@ img.full {
   display: inline;
 }
 @media (min-width: 40em) {
-  /* line 67, ../../sass/app.scss */
+  /* line 68, ../../sass/app.scss */
   .thirds .third {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 69, ../../sass/app.scss */
+  /* line 70, ../../sass/app.scss */
   .thirds .third:nth-child(3) {
     float: right;
     margin-right: 0;
   }
 }
 
-/* line 76, ../../sass/app.scss */
+/* line 77, ../../sass/app.scss */
 .creation, #decoder {
   background-color: #ffd;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 82, ../../sass/app.scss */
+/* line 83, ../../sass/app.scss */
 #cryptographic {
   margin-bottom: 0em;
 }
 
-/* line 86, ../../sass/app.scss */
+/* line 87, ../../sass/app.scss */
 .r {
   margin-bottom: 1.5em;
 }
 
-/* line 90, ../../sass/app.scss */
+/* line 91, ../../sass/app.scss */
 #options {
   margin-top: 1.5em;
   text-align: center;
 }
 
-/* line 95, ../../sass/app.scss */
+/* line 96, ../../sass/app.scss */
 #create, #send {
   margin-bottom: 3em;
 }
 
-/* line 99, ../../sass/app.scss */
+/* line 100, ../../sass/app.scss */
 section {
   width: 100%;
   float: right;
@@ -5975,33 +5976,33 @@ section {
   margin-bottom: 3em;
 }
 
-/* line 104, ../../sass/app.scss */
+/* line 105, ../../sass/app.scss */
 .hero {
   margin-top: 3em;
 }
-/* line 106, ../../sass/app.scss */
+/* line 107, ../../sass/app.scss */
 .hero h1 {
   text-align: center;
 }
-/* line 109, ../../sass/app.scss */
+/* line 110, ../../sass/app.scss */
 .hero h2 {
   text-align: center;
   margin-bottom: 3em;
 }
 
-/* line 115, ../../sass/app.scss */
+/* line 116, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 121, ../../sass/app.scss */
+/* line 122, ../../sass/app.scss */
 #credits {
   margin-bottom: 24em;
 }
 
-/* line 125, ../../sass/app.scss */
+/* line 126, ../../sass/app.scss */
 #how_to_decode {
   margin-top: 3em;
 }
