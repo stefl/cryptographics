@@ -94,6 +94,7 @@ $(function() {
     "0": [g,w,w,b],
     "\n": [b,b,g,w],
     "!": [g,g,b,w],
+    " ": [b,w,b,w],
     "\0": [0,1,2,3] // reserved for the colour indicator square at [0]
   };
 
