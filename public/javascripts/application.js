@@ -99,6 +99,7 @@ $(function() {
   };
 
   window.generate = function(scrolling, include_labels) {
+    $("#results").show();
     if($("#secret").val() == "") {
       $.scrollTo( '#creating', 800);
     }
@@ -193,8 +194,9 @@ $(function() {
     }
     
     window.paper = Raphael("display", width, height);
-    generate(false, $("#display").hasClass("include_labels"));
+    //generate(false, $("#display").hasClass("include_labels"));
   }
+  $("#results").hide();
   $("#secret").val("");
   $("#password").val("");
 });

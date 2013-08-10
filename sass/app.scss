@@ -40,6 +40,11 @@ label {
   color: $dark-grey;
   font-family: $header-font-family;
   font-weight: 700;
+  @include adjust-font-size-to($base-font-size * 1, $lines: 1);
+}
+
+input {
+  @include adjust-font-size-to($base-font-size * 1, $lines: 1);
 }
 
 img.full {
@@ -102,6 +107,14 @@ section {
   @include trailer(2);
 }
 
+label {
+  @include trailer(0.5);
+}
+
+.hint {
+  color: #777;
+}
+
 .hero {
   @include leader(2);
   h1 {
@@ -109,8 +122,12 @@ section {
   }
   h2 {
     text-align: center;
-    @include trailer(2);
+    @include trailer(1);
   }
+}
+
+.centered {
+  text-align: center;
 }
 
 #display {

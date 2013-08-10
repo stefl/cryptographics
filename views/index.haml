@@ -8,82 +8,81 @@
     %h2
       Hide information inside a graphic
 
-%section#cryptographic
-  #display
-  #options.centered
+      
+  .guttered
     %p
-      %input.color-pick{:type=>"color", :"data-color"=>0}
-      %input.color-pick{:type=>"color", :"data-color"=>1}
-      %input.color-pick{:type=>"color", :"data-color"=>2}
-      %input.color-pick{:type=>"color", :"data-color"=>3}
+      This is a simple tool that helps you turn a secret piece of text into a graphic that's encrypted with a password and looks like this:
     %p
-      %a.button.btn.btn--primary{:href=>"#creating"} Create an image
+      %img{:src=>"/images/cryptographics-cryptographics.png", :width=>960, :height=>1200, :alt=>"This is the phrase 'cryptographs.io' encoded without a password"}
     %p
-      %a{:href=>"#download"} Download this image
+      Using cryptographics you can hide a secret in plain sight so that only someone with the password can
+      %a{:href=>"/decode"} decode 
+      it. Print out the images you make with this tool and put them on the wall of your home, laser-cut them, send access credentials using a postcard, wear your credit card details on a t-shirt and dare your friends to crack them, there's lots that you can do with this. You could turn a secret into anything you want, such as…
 
-%section#hero
   .examples
     .thirds
       .third
-        %a{:href=>"/quilt"}
-          %img{:src=>"/images/quilt-small.jpg", :alt=>"A cryptographic quilt", :width=>"480", :height=>"320"}
+        %h3
+          A crypto-quilt
+        %p
+          %a{:href=>"/quilt"}
+            %img{:src=>"/images/quilt-small.jpg", :alt=>"A cryptographic quilt", :width=>"480", :height=>"320"}
+
       .third
-        %a{:href=>"/object"}
-          %img{:src=>"/images/object-small.jpg", :alt=>"A cryptographic art object", :width=>"480", :height=>"320"}
+        %h3
+          A laser-cut bitcoin
+        %p
+          %a{:href=>"/object"}
+            %img{:src=>"/images/object-small.jpg", :alt=>"A cryptographic art object", :width=>"480", :height=>"320"}
       .third
-        %a{:href=>"/pin"}
-          %img{:src=>"/images/tshirt-small.jpg", :alt=>"A cryptographic tshirt", :width=>"480", :height=>"320"}
-  .hero.guttered
-    .intro
-      %p
-        Take a piece of
-        = succeed(",") do
-          %a{:href=>"/pin"} secret information
-        encrypt it with a password and turn it into an image that you can print out, turn into
-        = succeed(",") do
-          %a{:href=>"/object"} an artwork
-        make into a
-        = succeed(",") do
-          %a{:href=>"/quilt"} quilt
-        or put anywhere else you can put a two dimensional design. Only someone with the password can 
-        %a{:href=>"/decode"} decode 
-        it again.
-      %p
-        The image holds an encrypted version of whatever secret you choose to put into it, and can be decoded by anyone who you give the password to.
-      %p
-        Use the form below to create an image, which will generate an SVG file locally in your browser using Javascript. So it's not sending your password or secret anywhere while you make it.
-      %p
-        For the crypto-geeks, the encryption is via
-        = succeed(".") do
-          %a{:href=>"https://github.com/mdp/gibberish-aes"}
-            OpenSSL compatible AES
+        %h3
+          A wearable PIN
+        %p
+          %a{:href=>"/pin"}
+            %img{:src=>"/images/tshirt-small.jpg", :alt=>"A cryptographic tshirt", :width=>"480", :height=>"320"}
+
+%section#cryptographic
+
+  #results
+    #display
+    #options.thirds
+      .third
+        %p.centered
+          %input.color-pick{:type=>"color", :"data-color"=>0}
+          %input.color-pick{:type=>"color", :"data-color"=>1}
+          %input.color-pick{:type=>"color", :"data-color"=>2}
+          %input.color-pick{:type=>"color", :"data-color"=>3}
+      .third
+        %p.centered
+      .third
+        #download
+          %form#download-it{:action=>"/download", :method => "post"}
+            %p
+              %button.btn.btn--primary#save{:type=>"submit"} Download this image
+        %p.hint
+          Modern desktop browsers only
 
 %section#creating.creation
+  .full
+    %h2.centered
+      Design your own cryptographic
   .guttered
-    %h2
-      Create a cryptographic
     .r
       %label{:for=>"secret"} What's the secret you want to encrypt into an image?
       %textarea#secret{:name=>"secret", :placeholder=>"A very important thing that you want to keep secret"} A very important thing that you want to keep secret
+      %p.hint
+        This all happens locally in your browser.
     .r
       %label{:for=>"password"} What will be the password for your image?
       %input#password{:type=>"text", :name=>"password", :value=> "A strong password", :placeholder => "A password of your choice"}
-      %p
-        Leave the password blank to generate an image without encryption.
+      %p.hint
+        Leave this blank to generate an image without encryption.
     .r
       %p
         %button.btn.btn--primary#generate{:type=>"submit"} Generate your cryptographic image
-      %p
-        Keep your password safe — it's not stored anywhere by this service. No information is sent anywhere – this all happens locally in your browser.
-%section#download
-  .guttered
-    %form#download-it{:action=>"/download", :method => "post"}
-      %h2
-        Download this image (desktop only)
-      %p
-        %button.btn.btn--primary#save{:type=>"submit"} Download an SVG
-      %p
-        The image is generated locally, so this does not send any data via the web. This uses some modern HTML5 features, so if it doesn't work, please try using Google Chrome.
+      %p.hint
+        Keep your password safe — it's not stored by this service
+
 
 - if false
   %section#sending
