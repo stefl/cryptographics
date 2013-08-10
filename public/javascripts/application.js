@@ -4,6 +4,7 @@ $(function() {
   var r = 1;
   var b = 2;
   var g = 3;
+  window.colors = ["#555555", "#00deef", "#fce172", "#ffffff"];
 
   window.language = {
     "a": [w,w,r,r],
@@ -97,7 +98,9 @@ $(function() {
   };
 
   window.generate = function(scrolling, include_labels) {
-    var colors = ["#555", "#00deef", "#fce172", "#fff"];
+    if($("#secret").val() == "") {
+      $.scrollTo( '#creating', 800);
+    }
     if($("#password").val() == "") {
       window.encrypted_secret = "\0" + $("#secret").val();
     } else {
@@ -146,6 +149,18 @@ $(function() {
       $.scrollTo( '#display', 800);
     }
   }
+
+  $(".color-pick").each(function(i,e) {
+    var ctx = this;
+    var picker_color_id = $(ctx).data().color;
+    $(this).spectrum({
+      color: colors[picker_color_id]
+    });
+    $(this).change(function() {
+      colors[picker_color_id] = $(ctx).val();
+      generate(false, $("#display").hasClass("include_labels") );
+    })
+  });
 
   $("#generate").click(function(e) {
     e.preventDefault();
