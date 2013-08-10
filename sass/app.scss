@@ -53,7 +53,7 @@ img.full {
 }
 
 #ident {
-  @include trailer(0);
+  @include trailer(2);
   a {
     text-decoration: none;
   }
@@ -123,6 +123,15 @@ label {
   h2 {
     text-align: center;
     @include trailer(1);
+  }
+}
+
+.demonstration {
+  padding: 4em;
+  background-color: #ffd;
+  @include trailer(2);
+  .demonstration_inner {
+
   }
 }
 

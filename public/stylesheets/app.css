@@ -5899,7 +5899,7 @@ img.full {
 
 /* line 55, ../../sass/app.scss */
 #ident {
-  margin-bottom: 0em;
+  margin-bottom: 3em;
 }
 /* line 57, ../../sass/app.scss */
 #ident a {
@@ -6009,23 +6009,30 @@ label {
 }
 
 /* line 129, ../../sass/app.scss */
+.demonstration {
+  padding: 4em;
+  background-color: #ffd;
+  margin-bottom: 3em;
+}
+
+/* line 138, ../../sass/app.scss */
 .centered {
   text-align: center;
 }
 
-/* line 133, ../../sass/app.scss */
+/* line 142, ../../sass/app.scss */
 #display {
   background-color: #eee;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 139, ../../sass/app.scss */
+/* line 148, ../../sass/app.scss */
 #credits {
   margin-bottom: 24em;
 }
 
-/* line 143, ../../sass/app.scss */
+/* line 152, ../../sass/app.scss */
 #how_to_decode {
   margin-top: 3em;
 }
