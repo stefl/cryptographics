@@ -31,13 +31,13 @@
 
       .third
         %h3
-          A laser-cut bitcoin
+          A laser-cut art object
         %p
           %a{:href=>"/object"}
             %img{:src=>"/images/object-small.jpg", :alt=>"A cryptographic art object", :width=>"480", :height=>"320"}
       .third
         %h3
-          A credit card t-shirt
+          A secret t-shirt
         %p
           %a{:href=>"/pin"}
             %img{:src=>"/images/tshirt-small.jpg", :alt=>"A cryptographic tshirt", :width=>"480", :height=>"320"}
@@ -72,7 +72,7 @@
       %label{:for=>"secret"} What's the secret you want to encrypt into an image?
       %textarea#secret{:name=>"secret", :placeholder=>"A very important thing that you want to keep secret"} A very important thing that you want to keep secret
       %p.hint
-        This all happens locally in your browser.
+        Nothing typed in this box is recorded because the encryption happens locally in your browser.
     .r
       %label{:for=>"password"} What will be the password for your image?
       %input#password{:type=>"text", :name=>"password", :value=> "A strong password", :placeholder => "A password of your choice"}
@@ -102,12 +102,18 @@
   .guttered
     %h2
       About this project
+
+    %p
+      Cryptographics is a two-day hack collaboration between designer-technologist Stef Lewandowski and contemporary artist Elizabeth Barile-Page. 
+         
+    %p
+      It is one of the 25 hacks that were developed over a weekend at Digital Sizzle's Second Arthackathon #sizzle9; held at South Place Hotel. The brief was to use any data you want to create work of both technical and artistic merit. Using private information and intimate secrets Cryptographics brought together cutting edge encryption technology with craft, design and the hand made. The result is a series of objects all made for displaying sensitive information in public.
     %p
       This is a two-day hack project coded and designed by
       %a{:href=>"http://twitter.com/stef"} Stef Lewandowski
       in collaboration with artist and photographer
       = succeed(".") do
-        %a{:href=>"http://twitter.com/lovelylizz"} Liz Barile
+        %a{:href=>"http://twitter.com/lizbarilepage"} Elizabeth Barile-Page
     %p
       This was one of the ~25 hacks that were made over a weekend at Digital Sizzle's
       Arthack
@@ -119,30 +125,34 @@
     %h2
       But why?
     %p
-      There's a growing interest in security of information, and privacy around personal data, mainly in light of the revelations about governmental access and legal processes around what we assume is for our eyes only.
+      There's a growing interest in security of information, and privacy around personal data. Heightened by the recent revelations about governmental access and legal processes around what we assume is for our eyes only. 
+         
     %p
-      By encoding information into a physical object, you take it offline, and you're in control of what it contains. You can also use it in interesting ways - perhaps a treasure hunt involving encrypted images placed in locations, or a message to your grandchildren encoded in an object, or for sending information to someone in an entirely offline way, or just making a statement about how passwords and security are part of everyday life nowadays.
+      By encoding information into a physical object, you take it offline. You have more control of the information it contains. You can also use it in interesting ways - perhaps a treasure hunt involving encrypted images placed in different locations, a message to future generations encoded in an object, for sending information offline to someone, or just making a statement about how passwords and security are now a part of everyday life. 
+         
     %p
-      Let's say you encode your 1Password master password into an image and turn it into a poster that you hang in your office. It would look like a print from IKEA, but the password that you use to encrypt that password could be left in your will for your family to have after you die.
+      As an example, say you encode your 
+      %a{:href=>"http://1password.com"} 1Password 
+      master password, a password which unlocks all of your other passwords, into a graphic and turn it into a poster that you hang in your home or office. It would look like a print from IKEA, but the password that you use to encrypt that graphic could be left in a will for your family. 
+
     %p
-      You wouldn't leave your actual 1Password password with your lawyer in case they were hacked, and it would require two-factor authentication - the object and the password from your lawyer – to reveal the password.
+      You wouldn't leave your actual master password with your lawyer in case they were hacked. Cryptographics adds an additional level of complexity. It requires a two-factor authentication - the object and the password  – to reveal the hidden information. Allowing the safe access to your digital estate.         
+                     
     %p
-      After your death your family would then have access to your digital estate.
-    %p
-      Digital legacy is just one use case for this technique, and this site will update with new applications and ideas as people suggest them.
+      There are many other practical uses for this system. Check this site again for updates of new applications and ideas. And if you have any, please get in touch
 %section#credits
   .guttered
     %h2
       Credits
     %p
-      %img{:src=>"/images/stef-and-liz-3.jpg", :alt=>"Stef and Liz"}
+      %img{:src=>"/images/stef-and-liz-3.jpg", :alt=>"Stef and Elizabth"}
     %p
       Made by
       = succeed(",") do
         %a{:href=>"http://twitter.com/stef"} @stef
       %a{:href=>"http://lizbarile.com"}
-        Liz
-      and friends at
+        Elizabeth
+      and a little help from their friends at
       = succeed(".") do
         %a{:href=>"https://www.hackerleague.org/hackathons/digital-sizzle-9-art-hack"}
           Digital Sizzle 9
